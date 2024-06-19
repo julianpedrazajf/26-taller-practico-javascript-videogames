@@ -1,0 +1,64 @@
+body {
+    background-image: linear-gradient(to right top, #051f40, #2e2654, #58275f, #81245f, #a62454);
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.game-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
+}
+
+canvas{
+box-shadow:  -6px -6px 30px #eb612f,
+             6px 6px 30px #f96731;
+    border: 3px solid #A62454;
+    border-radius: 6px;
+    background-image: linear-gradient(to left bottom, #f2ab6d, #c8b167, #9fb272, #7eae84, #6aa695);;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+}
+
+button {
+    background-image: linear-gradient(to bottom, #f26430, #e44f3e, #d33d48, #be2e50, #a62454);
+    border-radius: 8px;
+    border-color: #A62454;
+    font-family: inherit;
+    margin: 0;
+    padding: 5px 20px;
+    width: 100px;
+}
+
+button:not(:last-child) {
+    margin-right: 10px;
+}
+.massages {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 460px;
+}
+
+p {
+    display: block;
+    margin: 0;
+    width: 100%;
+}
+
+@media (max-width: 440px) {
+    button { margin-top: 25px; }
+    #up, #down { margin-left: 100%; margin-right: 100%;}
+}
