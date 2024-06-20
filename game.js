@@ -33,27 +33,54 @@ let enemyPositions = [];
 window.addEventListener('load', setCanvasSize);
 window.addEventListener('resize', setCanvasSize);
 
-
+function fixNumber(n) {
+    return Number(n.toFixed(2));
+}
 
 function setCanvasSize() {
-    if(window.innerHeight > window.innerWidth) {
+    windowHeight = window.innerHeight * 0.7;
+    windowWidth = window.innerWidth * 0.7;
+
+    /* if(window.innerHeight > window.innerWidth) {
         canvasSize = window.innerWidth * 0.8;
     } else {
         canvasSize = window.innerHeight * 0.8;
+    } */
+    if (window.innerHeight > window.innerWidth) {
+        if ((windowWidth % 10) !== 0) {
+             canvasSize = Math.ceil(windowWidth / 10) * 10;
+        } else {
+             canvasSize = windowWidth;
+        }} 
+    else {
+        if ((windowHeight % 10) !== 0) {
+             canvasSize = Math.ceil(windowHeight / 10) * 10;
+        } else {
+             canvasSize = windowHeight;
+        }
     }
+
+    /* canvasSize = Number(canvasSize.toFixed(0));
 
     canvas.setAttribute('width', canvasSize);
     canvas.setAttribute('height', canvasSize);
 
     elementsSize = canvasSize / 10;
 
-    
-    startGame();    
+    playerPosition.x = undefined;
+    playerPosition.y = undefined;
+    startGame();  */   
+
+    canvas.setAttribute('width', canvasSize);
+     canvas.setAttribute('height', canvasSize);
+     elementsSize = (canvasSize / 10);
+     startGame();
 }
 
 function startGame() {
 
     console.log({ canvasSize, elementsSize});
+    //console.log(window.innerWidth, window.innerHeight);
 
     game.font = elementsSize + 'px Verdana';
     game.textAlign = 'end';
@@ -90,7 +117,7 @@ function startGame() {
                 if (!playerPosition.x && !playerPosition.y ){
                     playerPosition.x = posX;
                     playerPosition.y = posY;
-                    console.log({playerPosition});
+                    //console.log({playerPosition});
                 }
             } else if (col == 'I') {
                 giftPosition.x = posX;
