@@ -8,6 +8,7 @@ const spanLives = document.querySelector('#lives');
 const spanTime = document.querySelector('#time');
 const spanRecord = document.querySelector('#record');
 const pResult = document.querySelector('#result');
+const reset_button = document.querySelector('#reset_button');
 
 let canvasSize;
 let elementsSize;
@@ -228,6 +229,7 @@ btnUp.addEventListener('click', moveUp);
 btnLeft.addEventListener('click', moveLeft);
 btnRight.addEventListener('click', moveRight);
 btnDown.addEventListener('click', moveDown);
+reset_button.addEventListener('click', resetGame);
 
 function moveByKeys(event) {
     if (event.key == 'ArrowUp') {
@@ -276,4 +278,8 @@ function moveDown() {
     playerPosition.y += elementsSize;
     startGame();
     }
+}
+
+function resetGame() {
+    location.reload();
 }
